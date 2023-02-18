@@ -43,6 +43,8 @@ header nav div {
 a {
     text-decoration: none;
     font-weight: 400;
+    letter-spacing: 1px;
+    font-size: large;
 }
 
 .container {
