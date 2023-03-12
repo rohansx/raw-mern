@@ -1,0 +1,186 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+navbar{
+    background-color: white;
+}
+
+.navlog{
+    text-transform: uppercase;
+    color: red;
+    text-shadow: 3px 5px 4px rgba(0,0,0,0.47);
+}
+
+.navlog1{
+    color: black;
+    text-shadow: 3px 5px 4px rgba(0,0,0,0.47);
+}
+
+.nav-link{
+    color: black;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.nav-link:hover{
+    color: white;
+    background-color: black;
+    font-size: 1rem;
+}
+
+.navbar-brand{
+    font-size: 2rem;
+    font-weight: 2000;
+    font-style: italic;
+    text-shadow: 0cap;
+    color: black;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+/* main section */
+
+.main{
+    background: url(./img/bg7.png)no-repeat;
+    background-color: cover;
+    background-position-x: center;
+    background-position-y: center;
+    background-size:70vh;
+    background-position: 750px;
+    width: 100%;
+    height: 90vh;
+}
+
+.main h3{
+    font-size: 4.4rem;
+    font-weight: 700;
+}
+
+.main h6{
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    line-height: 1;
+    border-bottom: 3px solid rgb(233, 20,109);
+    width: 72%;
+    line-height: inherit;
+}
+
+.main .bt1{
+   height: 55px;
+   width: 135px;
+   background-color: black;
+   color: white;
+   outline: none;
+   border: none;
+   font-weight: bold;
+   border-radius: 0px;
+}
+
+.main .bt1:hover{
+    background-color: white;
+    color:black; 
+    border: 1px solid black;
+     -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75); 
+    
+}
+
+.main .bt2{
+    height: 55px;
+    width: 135px;
+    background-color: transparent;
+    color: black;
+    outline: none;
+    border: 1px solid black;
+    font-weight: bold;
+    border-radius: 0px;  
+ }
+
+ .main .bt2:hover{
+    background-color: black;
+    color:white; 
+    border: 1px solid black;
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75); 
+    
+}
+
+.about img{
+    height: 70vh;
+    /* background-color: #20c20e; */
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+/* -webkit-box-shadow: 9px 10px 31px 2px rgba(0,0,0,0.72);
+-moz-box-shadow: 9px 10px 31px 2px rgba(0,0,0,0.72);
+box-shadow: 9px 10px 31px 2px rgba(0,0,0,0.72);
+} */
+
+h1{
+    font-size: 3rem;
+    font-weight: 900;
+}
+
+.progress{
+    background-color: rgb(233,219,219);
+    justify-content: flex-start;
+    border-radius: 50px;
+    align-items: center;
+    position: relative;
+    display: flex;
+    height: 25px;
+    width: 100%;
+}
+
+.pro-value1{
+    animation: loadl 3s normal forwards;
+    border-radius: 50px;
+    background-color: black;
+    height: 25px;
+    width: 0;
+}
+.pro-value2{
+    animation: loadl 3s normal forwards;
+    border-radius: 50px;
+    background-color: black;
+    height: 25px;
+    width: 0;
+}
+
+.pro-value3{
+    animation: loadl 3s normal forwards;
+    border-radius: 50px;
+    background-color: black;
+    height: 25px;
+    width: 0;
+}
+
+.pro-value4{
+    animation: loadl 3s normal forwards;
+    border-radius: 50px;
+    background-color: black;
+    height: 25px;
+    width: 0;
+}
+
+
+.progress p{
+    color: white;
+    padding: 5px;
+}
+
+@keyframes loadl{
+    0%{
+        width: 0;;
+    }
+    100%{
+        width: 98%;
+    }
+}
