@@ -6,6 +6,8 @@
 
 navbar{
     background-color: white;
+    position: fixed;
+    
 }
 
 .navlog{
@@ -113,7 +115,7 @@ box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 }
 
 .about img{
-    height: 70vh;
+    height: 72vh;
     /* background-color: #20c20e; */
     -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
@@ -121,7 +123,8 @@ box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 /* -webkit-box-shadow: 9px 10px 31px 2px rgba(0,0,0,0.72);
 -moz-box-shadow: 9px 10px 31px 2px rgba(0,0,0,0.72);
 box-shadow: 9px 10px 31px 2px rgba(0,0,0,0.72);
-} */
+*/
+}
 
 h1{
     font-size: 3rem;
@@ -140,14 +143,14 @@ h1{
 }
 
 .pro-value1{
-    animation: loadl 3s normal forwards;
+    animation: load1 3s normal forwards;
     border-radius: 50px;
     background-color: black;
     height: 25px;
     width: 0;
 }
 .pro-value2{
-    animation: loadl 3s normal forwards;
+    animation: load2 3s normal forwards;
     border-radius: 50px;
     background-color: black;
     height: 25px;
@@ -155,7 +158,7 @@ h1{
 }
 
 .pro-value3{
-    animation: loadl 3s normal forwards;
+    animation: load3 3s normal forwards;
     border-radius: 50px;
     background-color: black;
     height: 25px;
@@ -163,7 +166,7 @@ h1{
 }
 
 .pro-value4{
-    animation: loadl 3s normal forwards;
+    animation: load4 3s normal forwards;
     border-radius: 50px;
     background-color: black;
     height: 25px;
@@ -176,11 +179,97 @@ h1{
     padding: 5px;
 }
 
-@keyframes loadl{
+@keyframes load1{
     0%{
         width: 0;;
     }
     100%{
         width: 98%;
     }
+}
+@keyframes load2{
+    0%{
+        width: 0;;
+    }
+    100%{
+        width: 85%;
+    }
+}
+@keyframes load3{
+    0%{
+        width: 0;;
+    }
+    100%{
+        width: 90%;
+    }
+}
+@keyframes load4{
+    0%{
+        width: 0;;
+    }
+    100%{
+        width: 95%;
+    }
+}
+
+.btn1{
+    height: 40px;
+    width: 145px;
+    outline: none;
+    border: none;
+    background-color: black;
+    color: white;
+    border-radius: 4px;
+}
+
+.btn1:hover{
+    background-color: transparent;
+    color: black;
+    border: 1px solid black;
+    transition: 0.5s;
+}
+
+.btn2{
+    height: 40px;
+    width: 145px;
+    outline: none;
+    border: 1px solid black;
+    background-color: transparent;
+    color: black;
+    border-radius: 4px;
+}
+
+.btn2:hover{
+    background-color: black;
+    color: white;
+    border:none;
+    transition: 0.5s;
+}
+
+.card{
+    border: none;
+    outline: none;
+    -webkit-box-shadow: -2px 5px 16px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: -2px 5px 16px 0px rgba(0,0,0,0.75);
+box-shadow: -2px 5px 16px 0px rgba(0,0,0,0.75);
+}
+.card p{
+    color: gray;
+}
+
+.circle {
+    height: 70px;
+    width: 70px;
+    background-color: lightgrey;
+    color: black;
+    padding: 12px;
+    font-size: 30px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+.card:hover .circle{
+    background-color: black;
+    color: white;
+    transition:0.5s
 }
