@@ -4,10 +4,12 @@
     box-sizing: border-box;
 }
 
-navbar{
+.navbar{
     background-color: white;
     position: fixed;
-    
+    -webkit-box-shadow: 0px 5px 5px -3px rgba(0,0,0,0.69);
+    -moz-box-shadow: 0px 5px 5px -3px rgba(0,0,0,0.69);
+    box-shadow: 0px 5px 5px -3px rgba(0,0,0,0.69);
 }
 
 .navlog{
@@ -18,7 +20,7 @@ navbar{
 
 .navlog1{
     color: black;
-    text-shadow: 3px 5px 4px rgba(0,0,0,0.47);
+    text-shadow: 3px 5px 4px rgba(0,0,0,0.34);
 }
 
 .nav-link{
@@ -70,6 +72,8 @@ navbar{
     border-bottom: 3px solid rgb(233, 20,109);
     width: 72%;
     line-height: inherit;
+    /* text-shadow: 2px 3px 3px rgba(0,0,0,0.5); */
+    font-weight: 400;
 }
 
 .main .bt1{
@@ -247,6 +251,7 @@ h1{
 }
 
 .card{
+    height: 50vh;
     border: none;
     outline: none;
     -webkit-box-shadow: -2px 5px 16px 0px rgba(0,0,0,0.75);
@@ -272,4 +277,37 @@ box-shadow: -2px 5px 16px 0px rgba(0,0,0,0.75);
     background-color: black;
     color: white;
     transition:0.5s
+}
+
+.contact{
+ 
+}
+
+.circle:hover{
+    
+    background-color: black;
+    color: white;
+    transition: 0.4s;
+}
+
+.contact .btn3{
+    background-color: black;
+    color: white;
+    border: none;
+    outline: none;
+    height: 40px;
+    width: 140px;
+}
+
+.btn3:hover{
+    background-color: transparent;
+    color: black;
+    border: 1px solid black;
+    transition: 0.4s;
+}
+
+footer{
+    background-color: black;
+    color: light;
+    height: 8vh;
 }
