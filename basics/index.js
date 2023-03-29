@@ -74,7 +74,7 @@ const server = http.createServer(function (request, response) {
             response.write("users not found")
         }else{
             Users.splice(idx,1)
-            response.write("")
+            response.write("user deleted successfully")
         }
     }
      else {
