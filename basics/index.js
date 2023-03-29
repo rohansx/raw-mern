@@ -30,12 +30,12 @@ const server = http.createServer(function (request, response) {
         } else {
             response.write("Not Found")
         }
-    }else if(request.method==="POST" && paths[1]==="users"){
-        let data=""
-        request.on("data", function(chunk){
+    } else if (request.method === "POST" && paths[1] === "users") {
+        let data = ""
+        request.on("data", function (chunk) {
             data += chunk
         })
-        request.on("end", function(){
+        request.on("end", function () {
             const obj = JSON.parse(data.toString())
             Users.push(obj)
             // Users.pop(obj)
@@ -44,8 +44,40 @@ const server = http.createServer(function (request, response) {
 
         response.statusCode = 201
         response.write("User data created.")
-    } 
-    else {
+
+    } else if (request.method == "PUT" && paths[1] === "users" && paths[2]) {
+        const idx = paths[2]
+        let data = ""
+        console.log(Users[idx])
+
+        if (Users[idx]) {
+            request.on("data", function (chunk) {
+                data += chunk
+            })
+
+            request.on("end", function () {
+                const obj = JSON.parse(data.toString())
+                Users[idx] = {
+                    ...Users[idx],
+                    ...obj
+                }
+            })
+            response.write("user updated successfully")
+        } else {
+            response.write("user not found")
+        }
+    }else if(request.method === "DELETE" && paths[1] === "users" && paths[2]){
+        const name = paths[2]
+
+        const idx = Users.findIndex(element => element.name.toLowerCase() === name.toLowerCase())
+        if(idx === -1){
+            response.write("users not found")
+        }else{
+            Users.splice(idx,1)
+            response.write("")
+        }
+    }
+     else {
         response.write("Not Found")
     }
 
