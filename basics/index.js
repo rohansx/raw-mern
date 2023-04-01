@@ -45,7 +45,7 @@ const server = http.createServer(function (request, response) {
         response.statusCode = 201
         response.write("User data created.")
 
-    } else if (request.method == "PUT" && paths[1] === "users" && paths[2]) {
+    } else if (request.method === "PUT" && paths[1] === "users" && paths[2]) {
         const idx = paths[2]
         let data = ""
         console.log(Users[idx])
