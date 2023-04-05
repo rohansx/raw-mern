@@ -1,8 +1,15 @@
 const express = require("express")
-const app = express()
 const fs = require("fs/promises")
 const utils = require("./utils/utils.js");
 const todoRouter = require("./routes/todos.routes.js");
+const viewsRouter = require("./routes/views.routes")
+
+// initialize the express app
+const app = express()
+
+// view engine config
+// app.use("/assets", express.static("./assets"))
+app.set("view engine", "ejs")
 
 // Middleware to handle JSON-encoded request bodies
 app.use(express.json());
@@ -11,7 +18,11 @@ app.get("/greetings", (req, res) => {
     res.send("Hello, My project started!");
   });
 
-app.use("/todos", todoRouter)
+//view router
+app.use("/", viewsRouter)
+
+//api router
+app.use("/api/v1/todos", todoRouter)
 
 // Function to read the todo data from the file
 // function readData() {
