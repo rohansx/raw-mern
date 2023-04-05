@@ -33,8 +33,19 @@
         </header>
 
         <main>
-            <% todos.forEach((todo) => {%>
-                    
+            <% todos.forEach((todo) => { %>
+
+                <h3>
+                    <%=todo.title %>
+                </h3>
+
+                <p>
+                    <%= todo.description %>
+                </p>
+
+                <h5>
+                    <%= todo.completed ? "done" : "undone" %>
+                </h5>
 
            <% }) %>
         </main>
