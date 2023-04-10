@@ -1,36 +1,20 @@
-<%- include("partials/header.ejs")%>
-
-            <div class="container mt-3">
-                <div class="row">
-                    <div class="col">
-                        <ul class="list-group">
-                            <% todos.forEach((todo)=> { %>
-                                <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    <a href="/todos/<%= todo.title %>" class="btn">
-                                        <%= todo.title %>
-                                    </a>
-                                    <span class="badge rounded-pill <%= todo.completed ? 'bg-success' : 'bg-danger' %>">
-                                        <%= todo.completed ? "done" : "undone" %>
-                                    </span>
-                                </li>
-                                <% }) %>
-                        </ul>
-                    </div>
+<%- include("partials/header")   %>
+        <div class="container mt-3">
+            <div class="row">
+                <div class="col">
+                    <ul class="list-group">
+                        <% todos.forEach((todo)=> { %>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <a href="/todos/<%=todo.title%>" class="btn">
+                                    <%= todo.title %>
+                                </a>
+                                <span class="badge rounded-pill <%= todo.completed ? 'bg-success' : 'bg-danger' %>">
+                                    <%= todo.completed ? "done" : "undone" %>
+                                </span>
+                            </li>
+                            <% }) %>
+                    </ul>
                 </div>
             </div>
-            <!-- <% todos.forEach((todo) => { %>
-
-                <h3>
-                    <%=todo.title %>
-                </h3>
-
-                <p>
-                    <%= todo.description %>
-                </p>
-
-                <h5>
-                    <%= todo.completed ? "done" : "undone" %>
-                </h5>
-
-           <% }) %> -->
-<%- include ("partials/footer.ejs") %>
+        </div>
+<%- include("partials/footer")   %>

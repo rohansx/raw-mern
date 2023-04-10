@@ -1,18 +1,94 @@
-<%- include("partials/header.ejs")%>
-
-
-            <div class="container mt-3">
-                <div class="row">
-                    <div class="col">
-                        <% if todo.title %>
-                        <h1><%= todo.list %></h1>
-                        <p><%= todo.description %></p>
-                        <% } else {%>
+<%- include("partials/header")  %>
+<div class="container mt-3">
+    <div class="row">
+    </div>
+</div>
+<div class="container mt-3">
+            <div class="row">
+                <div class="col">
+                    <% if(todo) {%>
+                        <h1>
+                            <%= todo.title  %>
+                        </h1>
+                        <p>
+                            <%= todo.description %>
+                        </p>
+                        <hr>
+                        <hr>
+                        <h1>Modify your todo</h1>
+                        <div class="div">
+                            <form id="todoUpdateForm">
+                                <div class="mb-3">
+                                    <label for="title" class="form-label">Enter Title</label>
+                                    <input type="text" class="form-control" id="title" readonly required value="<%=todo.title%>">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="description" class="form-label">Enter Description</label>
+                                    <textarea class="form-control" id="description" rows="3"
+                                        required><%=todo.description%></textarea>
+                                </div>
+                
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="completed" id="completedDone" <%= todo.completed ? "checked" : "" %>/>
+                                    <label class="form-check-label" for="completedDone">
+                                        Mark Done
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="completed" id="completedNotDone" <%= todo.completed ? "" : "checked" %> />
+                                    <label class="form-check-label" for="completedFalse">
+                                        Not Done
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <div class="text-center">
+                                        <input class="btn btn-primary" type="submit" value="Update" />
+                                    </div>
+                                </div>
+                            </form>
+                        </div>                
+                        <% } else { %>
                             <h1>Not found</h1>
-                        <%} %> 
-                    </div>
+                            <a href="todos/add" class="my-1 btn btn-primary">Try adding a new todo...</a>
+                        <% } %>
                 </div>
             </div>
-            
-<%- include ("partials/footer.ejs") %>
+        </div>
 
+        <script>
+            document.getElementById("todoUpdateForm").addEventListener("submit", function(event){
+                event.preventDefault()
+                console.log("submittig");
+
+                const title = document.getElementById("title").value
+                const description = document.getElementById("description").value
+                const completedDone = document.getElementById("completedDone")
+
+                // console.log("checkbox is ", completedDone.checked);
+                // console.log("checkbox is ", title.value);
+                const body = {
+                    title,
+                    description,
+                    completed: completedDone.checked ? true : false 
+                }
+
+                // fetch(`http://localhost:3000/api/todos/${title}`, {
+                fetch(`/api/todos/${title}`, {
+                    method: "PUT",
+                    // without header the request payload will be [object Object]
+                    headers: {
+                        "Accept" : "application/json",
+                        "Content-type": "application/json"
+                    },
+                    body: JSON.stringify(body)
+                })
+                // fetch is a promise so need to resolve it
+                .then((response)=>{
+                    console.log("PUT Response = ", response.status);
+                })
+                .catch((error)=>{
+                    console.log("---Error---", error);
+                })
+            })
+        </script>
+<%- include("partials/footer")  %>
