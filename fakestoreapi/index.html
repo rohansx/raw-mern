@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API --> fetch</title>
+    <style>
+        #cont{
+            width: 80%;
+            margin: 50px auto;
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 20px;
+        }
+        #cont>div{
+            padding: 20px;
+            box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+        }
+        #cont>div>img{
+            width: 100%;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div id="cont">
+
+    </div>
+</body>
+</html>
+<script>
+    // API:-- Aplication Programming Interface
+
+    // const x  = fetch();
+    // console.log(x);
+
+    const url = 'https://reqres.in/api/users?page=2';
+    
+    /*
+    // one way to connect API
+    fetch(url)
+        .then(function(res){
+            return res.json();
+        })
+        .then(function(res){
+            console.log(res.data);
+        })
+        .catch(function(err){
+            console.log(err);
+        });
+    */
+
+    // /*
+    // another way to connect API Using Asyn and await
+    
+    // async function getData(){
+    //     try{
+    //         let res = await fetch(url);
+    //         let users = await res.json();
+    //         append(users.data);
+    //         console.log(users.data);
+    //     }
+    //     catch(err){
+    //         console.log(err);
+    //     }
+    // };
+    // getData();
+
+    // const cont = document.getElementById('cont');
+    // function append(data){
+    //     data.forEach(el => {
+    //         let img = document.createElement('img');
+    //         img.src = el.avatar;
+    //         let name = document.createElement('h2');
+    //         name.innerText = el.first_name;
+    //         let lname = document.createElement('h2');
+    //         lname.innerText = el.last_name;
+    //         let mail = document.createElement('p');
+    //         mail.innerText = el.email;
+    //         let div = document.createElement('div');
+    //         div.append(img,name,lname,mail);
+    //         cont.append(div);
+    //     });
+    // }
+    // */
+
+    const url1 = 'https://fakestoreapi.com/products';
+    async function getData(){
+        try{
+            let res = await fetch(url1);
+            let products = await res.json();
+            append(products);
+            console.log(products);
+        }
+        catch(err){
+            console.log(err);
+        }
+    };
+    getData();
+
+    const cont = document.getElementById('cont');
+    function append(data){
+        data.forEach(el => {
+            let img = document.createElement('img');
+            img.src = el.image;
+            let category = document.createElement('h2');
+            category.innerText = el.category;
+            let title = document.createElement('h2');
+            title.innerText = el.title;
+            let desc = document.createElement('p');
+            desc.innerText = el.description;
+            let price = document.createElement('p');
+            price.innerText = el.price;
+            let rating = document.createElement('p');
+            rating.innerText = el.rating.rate;
+            let div = document.createElement('div');
+            div.append(img,category,title,desc,price,rating);
+            cont.append(div);
+        });
+    }
+</script>
