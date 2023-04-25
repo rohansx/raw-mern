@@ -2,6 +2,10 @@
 
 This store is created using fakestoreapi 
 
+## Deployed link or Demo link
+
+https://fakestore-rohansx.vercel.app/
+
 ## Installation
 
 1. Clone the repository
@@ -14,6 +18,3 @@ $ npm install
 ```sh
 $ npm start
 ```
-## Deployed link or Demo link
-
-https://fakestore-rohan.vercel.app/
