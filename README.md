@@ -11,7 +11,7 @@ https://portfolio-rohansx.vercel.app/
 ## Assignment no 2
 
 ### clock 
-https://clock-rohan.vercel.app/
+https://clock-rohansx.vercel.app
 
 ## Assignment no 3
 
