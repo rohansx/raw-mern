@@ -10,6 +10,10 @@ This store is created using fakestoreapi
 ```sh
 $ npm install
 ```
+4. After installing all the node modules, run the project 
+```sh
+$ npm start
+```
 ## Deployed link or Demo link
 
 https://fakestore-rohan.vercel.app/
