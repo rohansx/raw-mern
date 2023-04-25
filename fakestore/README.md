@@ -16,4 +16,4 @@ $ npm start
 ```
 ## Deployed link or Demo link
 
-https://fakestore-rohan.vercel.app/
+https://fakestore-rohansx.vercel.app/
