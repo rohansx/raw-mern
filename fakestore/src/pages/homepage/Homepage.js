@@ -28,7 +28,7 @@ const Homepage = () => {
             <p>{item.title}</p>
             <h3>$. {item.price}</h3>
             <button onClick={() => dispatch({ type: "ADD", payload: item })}>
-              add to cart
+              Add to cart
             </button>
           </div>
         );
