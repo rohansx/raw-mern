@@ -2,124 +2,62 @@
 <html lang="en">
 
 <head>
-    <style>
-        h1 {
-            margin: auto;
-            text-align: center;
-            color: black;
-        }
+    <!-- Charset -->
+    <meta charset="utf-8">
+
+    <!-- Style Sheets -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <!-- Viewport -->
+    <meta name="viewport" content="width=device-width">
+
+    <!-- Title -->
+    <title>Nice analog clock</title>
+
+    <!-- Description -->
+    <meta name="description" content="Website with nice analog clock.">
+
+
+    <!-- Icon -->
+    <link rel="icon" type="image/png" href="icon.png">
 
 
 
-        hr {
-            width: 80%;
-            margin: 1rem auto;
 
-        }
-
-        body{
-            width: fit-content;
-        }
-
-        html {
-            background: url(world1.jpg);
-            /* background: url(https://images.unsplash.com/photo-1495195129352-aeb325a55b65?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1176&q=80); */
-            background-size: cover;
-        }
-
-        #clockContainer {
-            border: 1rem solid black;
-            background-color: white;
-            border-radius: 50%;
-            position: relative;
-            margin: auto;
-            height: 40vw;
-            width: 40vw;
-
-        }
-
-
-
-        #hour,
-        #minute,
-        #second {
-            position: absolute;
-            background: black;
-            border-radius: 10px;
-            /* transform-origin: bottom; */
-            transform-origin: bottom center;
-        }
-
-        #hour {
-            transform: rotate(30deg);
-            width: 1.8%;
-            height: 25%;
-            top: 25%;
-            left: 48.85%;
-            /* opacity: 0.8; */
-        }
-
-        #minute {
-            transform: rotate(60deg);
-            width: 1.6%;
-            height: 30%;
-            top: 19%;
-            left: 48.9%;
-            /* opacity: 0.8; */
-        }
-
-        #second {
-            transform: rotate(90deg);
-            width: 1%;
-            height: 40%;
-            top: 9%;
-            left: 49.25%;
-            
-            /* opacity: 0.8; */
-            transition: all 0.5s;
-        }
-    </style>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
 </head>
 
 <body>
-    <h1>Clock using JS and CSS</h1>
-    <hr />
-    <div></div>
-    <div id="clockContainer">
-        <div id="hour"></div>
-        <div id="minute"></div>
-        <div id="second"></div>
-        <div class="number" style="transform: translate(-50%, -150%)">12</div>
-        <div class="number" style="transform: translate(50%, -50%)">3</div>
-        <div class="number" style="transform: translate(0, 50%)">6</div>
-        <div class="number" style="transform: translate(-50%, -50%)">9</div>
-        <div class="number" style="transform: translate(-70.7%, -70.7%)">1</div>
-        <div class="number" style="transform: translate(-70.7%, 70.7%)">11</div>
-        <div class="number" style="transform: translate(70.7%, -70.7%)">2</div>
-        <div class="number" style="transform: translate(70.7%, 70.7%)">10</div>
-        <div class="number" style="transform: translate(-90%, 0)">9</div>
-        <div class="number" style="transform: translate(0, -90%)">12</div>
-        <div class="number" style="transform: translate(90%, 0)">3</div>
-        <div class="number" style="transform: translate(0, 90%)">6</div>
+   
+    <div class="clock">
+        <div class="hour">
+            <div class="hr" id="hr"></div>
+        </div>
+        <div class="min">
+            <div class="mn" id="mn"></div>
+        </div>
+        <div class="sec">
+            <div class="sc" id="sc"></div>
+        </div>
     </div>
-    <script>
-        setInterval(() => {
-            d = new Date(); //object of date()
-            hr = d.getHours();
-            min = d.getMinutes();
-            sec = d.getSeconds();
-            hr_rotation = 30 * hr + min / 2; //converting current time
-            min_rotation = 6 * min;
-            sec_rotation = 6 * sec;
+   
+    <script type="text/javascript">
+        const deg = 6;
+        const hr = document.querySelector('#hr');
+        const mn = document.querySelector('#mn');
+        const sc = document.querySelector('#sc');
 
-            hour.style.transform = `rotate(${hr_rotation}deg)`;
-            minute.style.transform = `rotate(${min_rotation}deg)`;
-            second.style.transform = `rotate(${sec_rotation}deg)`;
-        }, 1000);
+        setInterval(() => {
+            let day = new Date();
+
+            let hh = day.getHours();
+            let mm = day.getMinutes();
+            let ss = day.getSeconds();
+            let ms = day.getMilliseconds();
+
+            hr.style.transform = `rotateZ(${(hh*30)+(mm/2)}deg`;
+            mn.style.transform = `rotateZ(${(mm*6)+(ss/10)}deg`;
+            sc.style.transform = `rotateZ(${(ss*6)+(ms/1000*6)}deg`;
+        })
     </script>
 </body>
 
