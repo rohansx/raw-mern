@@ -1,0 +1,135 @@
+/** @format */
+
+.nav {
+  display: flex;
+  justify-content: space-around;
+  position: fixed;
+  width: 100vw;
+  background-color: white;
+  padding: 32px;
+}
+.nav .active {
+  font-weight: 800;
+}
+.nav a {
+  color: black;
+  text-decoration: none;
+}
+
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+.navigation {
+  height: 15vh;
+  width: 100vw;
+  background-color: black;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flex {
+  display: flex;
+}
+
+.row {
+  flex-direction: row;
+}
+
+.col {
+  flex-direction: column;
+}
+
+/*  */
+.logo {
+  margin-left: 20px;
+}
+.nav-links {
+  justify-content: space-evenly;
+  /* border: 2px solid white; */
+}
+.nav-bar {
+  width: 30%;
+}
+
+.nav-item {
+  list-style: none;
+  padding: 10px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.nav-link:hover {
+  border-bottom: 2px solid white;
+  /* font-weight: bold; */
+}
+
+/* banner */
+.banner {
+  background-color: black;
+  height: 80vh;
+}
+
+.banner-image {
+  translate: 0px 20px;
+  width: 50%;
+}
+.banner-image img {
+  width: 90%;
+}
+
+.banner-text {
+  /* border: 2px solid white; */
+  color: white;
+  width: 50%;
+  margin-left: 100px;
+  margin-top: 100px;
+  translate: 100px 30px;
+  z-index: 9;
+}
+
+.banner h2 {
+  font-size: 3rem;
+  font-weight: bold;
+}
+.banner p {
+  font-size: 1.2rem;
+  width: 70%;
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
+/* counter */
+.counter {
+  border: 2px solid black;
+  padding: 20px;
+  width: 20%;
+  margin: 10px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.counter h2 {
+  font-size: 1.2rem;
+  text-align: center;
+}
+.counter button {
+  width: 50%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 20px;
+  padding: 5px;
+  border-style: none;
+}
+
