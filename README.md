@@ -13,6 +13,7 @@ https://portfolio-rohansx.vercel.app/
 ### clock 
 https://clock-rohan.vercel.app/
 
-### fakestore
-https://fakestore-rohan.vercel.app/
+## Assignment no 3
 
+### fakestore
+https://fakestore-rohansx.vercel.app/
